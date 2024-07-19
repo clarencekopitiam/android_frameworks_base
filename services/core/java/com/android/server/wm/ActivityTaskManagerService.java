@@ -263,7 +263,6 @@ import com.android.internal.protolog.common.ProtoLog;
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.FastPrintWriter;
 import com.android.internal.util.FrameworkStatsLog;
-import com.android.internal.util.PropImitationHooks;
 import com.android.internal.util.function.pooled.PooledLambda;
 import com.android.server.LocalManagerRegistry;
 import com.android.server.LocalServices;
@@ -291,6 +290,7 @@ import com.android.server.uri.UriGrantsManagerInternal;
 import com.android.server.wallpaper.WallpaperManagerInternal;
 import com.android.wm.shell.Flags;
 
+import com.android.internal.util.lineage.PixelPropsUtils;
 import com.android.internal.util.lineage.cutout.CutoutFullscreenController;
 
 import java.io.BufferedReader;
@@ -1992,7 +1992,7 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
 
     @Override
     public RootTaskInfo getFocusedRootTaskInfo() throws RemoteException {
-        if (!PropImitationHooks.shouldBypassTaskPermission(mContext)) {
+        if (!PixelPropsUtils.shouldBypassTaskPermission(mContext)) {
             enforceTaskPermission("getFocusedRootTaskInfo()");
         }
         final long ident = Binder.clearCallingIdentity();
@@ -3118,7 +3118,7 @@ public class ActivityTaskManagerService extends IActivityTaskManager.Stub {
     /** Sets the task stack listener that gets callbacks when a task stack changes. */
     @Override
     public void registerTaskStackListener(ITaskStackListener listener) {
-        if (!PropImitationHooks.shouldBypassTaskPermission(mContext)) {
+        if (!PixelPropsUtils.shouldBypassTaskPermission(mContext)) {
             enforceTaskPermission("registerTaskStackListener()");
         }
         mTaskChangeNotificationController.registerTaskStackListener(listener);

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.util;
+package com.android.internal.util.lineage;
 
 import android.app.Application;
 import android.os.Build;
