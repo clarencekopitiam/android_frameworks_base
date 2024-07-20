@@ -15,28 +15,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources>
-    <!-- Build properties from a GMS certified device against current platform SPL level -->
-    <string-array name="config_certifiedBuildProperties" translatable="false">
-        <item>PRODUCT:sailfish</item>
-        <item>DEVICE:sailfish</item>
-        <item>MANUFACTURER:Google</item>
-        <item>BRAND:google</item>
-        <item>MODEL:Pixel</item>
-        <item>FINGERPRINT:google/sailfish/sailfish:8.1.0/OPM1.171019.011/4448085:user/release-keys</item>
-        <item>VERSION.SECURITY_PATCH:2017-12-05</item>
-    </string-array>
-
-    <!-- Build fingerprint from stock ROM -->
-    <string name="config_stockFingerprint" translatable="false"></string>
-
-    <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
-    <string name="config_netflixSpoofModel" translatable="false"></string>
-
-    <!-- Whether to spoof device as pixel for certain google apps, to
-         unlock pixel-exclusive features -->
-    <bool name="config_spoofGoogleApps">true</bool>
-
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether to cancel fingerprint operation if not idle -->
     <bool name="config_fpCancelIfNotIdle">false</bool>
 
